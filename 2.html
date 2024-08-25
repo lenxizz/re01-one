@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>91香烟手机版</title>
+  </head>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  /* 左右居中 */
+  /* justify-content: center; */
+  /* 上下居中 */
+  align-items: center;
+  height: 100vh;
+  background: #cc2b5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #753a88,
+    #cc2b5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #753a88,
+    #cc2b5e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.Search {
+  width: 70px;
+  height: 70px;
+  outline: none;
+  border: none;
+  text-align: center;
+  border-radius: 100px;
+  /* 边框颜色 */
+  color: rgba(225, 225, 225, 0.3);
+  /* 背景颜色 */
+  background: rgba(129, 129, 129, 1);
+  backdrop-filter: blur(15px);
+  transition: 0.5s;
+  margin-top: 50px;
+}
+
+.Search:hover {
+  box-shadow: 0px 0px 10px rgb(87, 87, 87);
+}
+
+.sousuo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  transition: 0.5s;
+  border-radius: 100%;
+  margin-top: 65px;
+}
+
+/* .sousuo:hover {
+  transform: scale(0.7);
+} */
+
+.rq {
+  position: fixed;
+  margin-top: 150px;
+  width: 350px;
+  height: 670px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(230, 235, 240, 0.7);
+  background-color: rgb(230, 235, 240, 0.7);
+  border-radius: 30px;
+  backdrop-filter: blur(18px);
+  display: none;
+  transition: 0.3s;
+  overflow: scroll;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* 滑动条样式更改 */
+.rq::-webkit-scrollbar {
+  width: 0;
+  background-color: gray;
+  border-radius: 100%;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  user-select: none;
+}
+
+.wenzi {
+  text-align: center;
+  height: 190px;
+  width: 350px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  overflow: visible;
+}
+
+h2 {
+  background-color: rgb(44, 44, 44);
+  color: azure;
+  text-align: center;
+  border-radius: 25px 25px 0 0;
+  cursor: default;
+  font-size: 15px;
+}
+
+p {
+  flex: 1;
+  /* text-align: center; */
+  margin-top: 50px;
+  cursor: default;
+  background-color: rgb(0, 0, 0);
+}
+
+p:nth-child(2) {
+  color: azure;
+  position: absolute;
+  display: inline;
+  margin-top: 10px;
+  margin-left: -37px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgb(183, 0, 255);
+}
+
+p:nth-child(3) {
+  margin-top: 40px;
+  background-color: rgb(0, 0, 0, 0);
+}
+
+li {
+  margin-top: 15px;
+  list-style: none;
+  margin-left: -10px;
+}
+
+.home {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  margin-left: -320px;
+  margin-top: 10px;
+  background-color: rgb(43, 43, 43, 0.5);
+  border-radius: 18px;
+  text-align: center;
+  line-height: 80px;
+  transition: 0.2s;
+  cursor: pointer;
+  user-select: none;
+  color: #ffffff;
+}
+.home:active {
+  transform: scale(0.7);
+}
+
+#tu {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 9px;
+  width: 30px;
+  height: 30px;
+}
+
+.kucun {
+  position: fixed;
+  background-color: rgb(43, 43, 43, 0.5);
+  width: 50px;
+  height: 50px;
+  /* width: 300px;
+  height: 300px; */
+  border-radius: 18px;
+  transition: 0.4s;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 320px;
+  margin-top: 10px;
+  /* margin-top: 250px; */
+  user-select: none;
+  overflow-x: hidden;
+  color: #ffffff;
+}
+/* 滑动条样式更改 */
+.kucun::-webkit-scrollbar {
+  width: 0px;
+  background-color: gray;
+  border-radius: 100%;
+}
+.kucun:active {
+  transform: scale(0.7);
+}
+.kucGb {
+  margin-top: 258px;
+  margin-left: 240px;
+  text-align: center;
+  position: fixed;
+  width: 30px;
+  height: 25px;
+  color: #ffffff;
+  justify-content: center;
+  background-color: rgb(151, 151, 151);
+  border-radius: 5px;
+  display: none;
+  transition: 0.7s;
+}
+#tus {
+  position: fixed;
+  margin-top: 18px;
+  margin-left: 316px;
+  width: 35px;
+  height: 35px;
+  transition: 0.4s;
+}
+
+.modalCover {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  display: none;
+}
+.promptBox {
+  position: absolute;
+  width: 370px;
+  height: 300px;
+  margin-top: 250px;
+  background-color: rgb(43, 43, 43, 0.5);
+  box-shadow: 0px 0px 20px rgb(255, 255, 255);
+  text-align: center;
+  align-items: center;
+  line-height: 120px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  cursor: default;
+  display: none;
+  transition: 0.3s;
+  z-index: 1;
+  user-select: none;
+}
+button {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  padding: 5px 16px;
+  color: #ffffffd9;
+  border: 1px solid #000000;
+  background-color: #000000;
+  border-radius: 10px;
+  line-height: 1.4;
+  /* box-shadow: 0 2px #00000004; */
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  margin-left: -50px;
+}
+button:active {
+  transform: scale(0.7);
+}
+h1 {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.tou {
+  position: absolute;
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+  </style>
+  <body>
+    <p class="tou">91香烟价格预览手机版</p>
+    <div class="home"><img id="tu" src="./img/home.png" alt=""></div>
+    <div class="kucun"></div>
+    <img id="tus" src="./img/kucun.png" alt="">
+    <div class="kucGb">X</div>
+    <div class="box">
+      <input class="Search" type="text" placeholder="" />
+    </div>
+    <img class="sousuo" src="./img/sousuo.png" alt="#" />
+    <!-- <div class="modalCover"></div>
+    <div class="promptBox">
+      <div class="close"><h1>提示</h1></div>
+      <div class="textTs"></div>
+      <button class="button">确定</button> -->
+    <div class="rq">
+      <ul>
+        <li>
+          <img src="./img/qx1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>日税软白七星</h2>
+            <p>价格：480</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qx1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>日税软黑七星</h2>
+            <p>价格：460</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qx3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝七星</h2>
+            <p>价格：460</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qx2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟版七星</h2>
+            <p>价格：460</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/mevius.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>MEVIUS</h2>
+            <p>价格：460</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qkl/qkl1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>黑魔鬼2k</h2>
+            <p>价格：240</p>
+            <p>
+              Black Devil国内俗称“黑魔鬼”.味道很香,好像香薰油的感觉.在街上点一支,方圆5米都会闻到,保证引人瞩目。但从抽烟的角度来看,味道很淡或者说是没有。在嘴里的感觉像是甜奶油的味道，后期甜奶油的味道会消失,取而代之的是一阵苦味
+        </li>
+        <li>
+          <img src="./img/qkl/qkl2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>黑狐狸</h2>
+            <p>价格：235</p>
+            <p>
+              黑狐狸-日本出品日税黑狐狸香烟朴实无华的外表实际口味香气出乎意料的棒。以实惠的价格能调味出坚果香实属香烟界的卷王。
+        </li>
+        <li>
+          <img src="./img/qkl/qkl3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>老船长</h2>
+            <p>价格：240</p>
+            <p>
+              老船长-日本出品黄色老船长是一款比较常见的阿肯标识香烟，点燃后浓郁的巧克力香气加上甜嘴的设计真如同德芙巧克力般丝滑。这款香烟与黑魔鬼2k有着异曲同工之妙。
+        </li>
+        <li>
+          <img src="./img/afd/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>阿凡达风暴香蕉</h2>
+            <p>价格：285</p>
+            <p>
+              阿凡达香烟-ASIA STAR 韩国出品
+阿凡达风暴和蓝星香烟有着很大的共同点“平价、口味浓郁”。据调研绿豆味烟评分属最高，这也成为阿凡达香烟成功道路上有效的铺垫。
+        </li>
+        <li>
+          <img src="./img/afd/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>阿凡达风暴哈密瓜</h2>
+            <p>价格：285</p>
+            <p>
+              阿凡达香烟-ASIA STAR 韩国出品
+阿凡达风暴和蓝星香烟有着很大的共同点“平价、口味浓郁”。据调研绿豆味烟评分属最高，这也成为阿凡达香烟成功道路上有效的铺垫。
+        </li>
+        <li>
+          <img src="./img/afd/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>阿凡达风暴绿豆</h2>
+            <p>价格：285</p>
+            <p>
+              阿凡达香烟-ASIA STAR 韩国出品
+阿凡达风暴和蓝星香烟有着很大的共同点“平价、口味浓郁”。据调研绿豆味烟评分属最高，这也成为阿凡达香烟成功道路上有效的铺垫。
+        </li>
+        <li>
+          <img src="./img/ax/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细红</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细青</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细银</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细金</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细机械绿</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细机械蓝</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细竹</h2>
+            <p>价格：255</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/8.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细黑松露</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/9.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜葡萄双爆</h2>
+            <p>价格：280</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/10.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜橙子双爆</h2>
+            <p>价格：280</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/11.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜芒果双爆</h2>
+            <p>价格：290</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/12.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜青柠双爆</h2>
+            <p>价格：290</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/13.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细冰咖啡</h2>
+            <p>价格：285</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/14.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细支五味</h2>
+            <p>价格：310</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/15.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细草莓</h2>
+            <p>价格：275</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/16.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细芒果</h2>
+            <p>价格：270</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/17.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细幻变4mg</h2>
+            <p>价格：250</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/18.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细红茶</h2>
+            <p>价格：245</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/19.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜香芋柠檬</h2>
+            <p>价格：310</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/20.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细口香糖</h2>
+            <p>价格：310</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/ax/21.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>爱喜细巧克力</h2>
+            <p>价格：280</p>
+            <p>
+              韩国爱喜ESSE 名称灵感来源意大利语“Ami” 蕴意女性低焦油香烟，更是典型的混合型香烟，在各国有着很大的市场份额深受消费者喜爱。
+        </li>
+        <li>
+          <img src="./img/qx4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟方盒七星蓝莓</h2>
+            <p>价格：385</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qx5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>忠告七星可乐双爆</h2>
+            <p>价格：385</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qx6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>忠告七星巧克力</h2>
+            <p>价格：380</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/qx7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>忠告七星蓝莓</h2>
+            <p>价格：380</p>
+            <p>
+              七星-Seven Stars
+              七星牌香烟日本株式会社的巅峰之作更是以高端品味为主题的一款杰作。外观设计简约又不失文化底蕴，展现出时代的创新。烟草经过精心调配展现出细腻、清香风味。
+              每一口都能带给你不同的享受，快速沉浸在烟草的世界里这就是七星香烟
+            </p>
+          </div>
+        </li>
+        <li>
+          <img src="./img/ttm/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫酸奶</h2>
+            <p>价格：320</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>  
+        <li>
+          <img src="./img/ttm/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫红酒</h2>
+            <p>价格：285</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>   
+        <li>
+          <img src="./img/ttm/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫海盐青柠</h2>
+            <p>价格：310</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>  
+        <li>
+          <img src="./img/ttm/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>侧推人猿香蕉</h2>
+            <p>价格：290</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>  
+        <li>
+          <img src="./img/ttm/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫太阳橙</h2>
+            <p>价格：290</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>  
+        <li>
+          <img src="./img/ttm/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>冰果猫</h2>
+            <p>价格：270</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>  
+        <li>
+          <img src="./img/ttm/7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>冰橙猫</h2>
+            <p>价格：270</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li> 
+        <li>
+          <img src="./img/ttm/8.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫绿奶油</h2>
+            <p>价格：290</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li> 
+        <li>
+          <img src="./img/ttm/9.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫柑橘</h2>
+            <p>价格：290</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li> 
+        <li>
+          <img src="./img/ttm/10.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫日月双爆</h2>
+            <p>价格：310</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/11.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫象之谜</h2>
+            <p>价格：325</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/12.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫太空蓝莓</h2>
+            <p>价格：300</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/13.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>铁塔猫糖果双爆</h2>
+            <p>价格：320</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/14.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>细烟花葡萄猫</h2>
+            <p>价格：300</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/15.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>细日月双爆猫</h2>
+            <p>价格：310</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/16.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>细烟花芒果猫</h2>
+            <p>价格：310</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/ttm/17.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>细糖果双爆猫</h2>
+            <p>价格：280</p>
+            <p>
+              乌克兰香烟品牌铁塔猫以其均衡的烟味和浓郁的烟草口味而闻名结合了不同类型的烟草，以创造出独特的风味。
+国内香烟市场-爆珠外烟No.2铁塔猫享誉美味王之称，条纹的降焦孔设计最大程度降低香烟危害成分深得人心。
+        </li>
+        <li>
+          <img src="./img/bl/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐酸奶</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐西瓜</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐草莓双爆</h2>
+            <p>价格：300</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐凤梨</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐椰子</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐苹果</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐哈密瓜</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/8.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐红酒</h2>
+            <p>价格：295</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/9.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐可乐</h2>
+            <p>价格：245</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/10.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐陈皮</h2>
+            <p>价格：245</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/11.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐细冰川</h2>
+            <p>价格：225</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/12.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐柚子双爆</h2>
+            <p>价格：245</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/13.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐红茶双爆</h2>
+            <p>价格：245</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/bl/14.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>百乐姜茶双爆</h2>
+            <p>价格：245</p>
+            <p>
+              百乐-peel 
+外烟销量排行榜No.1 赶上了现代年轻人的潮流，以棉质的烟嘴设计口感体现的更像是一颗棒棒糖，风味更是丰富，这款香烟据调研是一款抽不腻的水果味爆珠外烟。
+        </li>
+        <li>
+          <img src="./img/wbl/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>万宝路葡萄</h2>
+            <p>价格：380</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>万宝路柑橘</h2>
+            <p>价格：380</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>方草莓双爆万</h2>
+            <p>价格：380</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>柠檬双爆万</h2>
+            <p>价格：380</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>西瓜双爆万</h2>
+            <p>价格：430</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>微油柠檬双爆万</h2>
+            <p>价格：260</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>万宝路红酒</h2>
+            <p>价格：310</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/wbl/8.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>万宝路黑冰</h2>
+            <p>价格：290</p>
+            <p>
+              万宝路-Marlboro
+香烟由世界第一大烟草公司制造，世界品牌500强。在混合型、烤烟型领悟上得到很大的成就。烤烟的口感则较为独特，有着吗啡、咖啡、麻古的味道，烟气则较为自然舒适，吸入后不会刺激感，深受烟民喜好。
+        </li>
+        <li>
+          <img src="./img/xk/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>星空侧推芒果</h2>
+            <p>价格：290</p>
+            <p>
+              韩国香烟中的扛霸仔。
+与众不同的侧面打开方式，时尚与创新相结合在香烟舞台上英姿焕发显得格外别出心裁。芒果味香气四溢让人欲罢不能。
+推荐指数：★★★★★
+        </li>
+        <li>
+          <img src="./img/xk/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>星空翻盖西瓜</h2>
+            <p>价格：290</p>
+            <p>
+              星空西瓜香烟算是赶上口味红利了。
+西瓜在韩国及日本可谓千金一瓠，促使这款香烟还没出家门就已经爆红了。传统翻盖盒最佳保鲜作用更贴切的形容真真正正抽上“西瓜”。
+推荐指数：★★★★☆
+        </li>
+        <li>
+          <img src="./img/xk/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>星空翻盖菠萝</h2>
+            <p>价格：290</p>
+            <p>
+              星空菠萝味的出现起到一个承上启下的作用。
+勇于创新不服输的精神，再度出品萝莉冷门口味香烟，不计前嫌担负重任为家族企业做出无私的贡献。不负众望的它凭借莎莎绵绵的口感得到许多人的青睐。
+推荐指数：★★★☆☆
+        </li>
+        <li>
+          <img src="./img/xk/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>星空威士忌</h2>
+            <p>价格：310</p>
+            <p>
+              新出的星空威士忌似乎大家不太感冒。
+也许是烟民觉得定价偏高，实际不以为然。之所以这款香烟定义高端品级，是因为需要极高的工艺水平，总所周知酒香型香烟十分不易保存且容易出油，这对于一款刚出道的香烟无疑是炼狱级的考验。
+推荐指数：★★★☆☆
+        </li>
+        <li>
+          <img src="./img/lx/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝星蓝莓双爆</h2>
+            <p>价格：280</p>
+            <p>
+              蓝星香烟-GALAXY 韩国出品
+此款香烟在大家印象中不太深刻，形容更似一匹黑马，以平价的优点在市场有着很大的份额，外观包装有着很吸引人的视觉，在蓝莓味的攻克上还是比较成功。
+        </li>
+        <li>
+          <img src="./img/lx/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝星橙子双爆</h2>
+            <p>价格：280</p>
+            <p>
+              蓝星香烟-GALAXY 韩国出品
+此款香烟在大家印象中不太深刻，形容更似一匹黑马，以平价的优点在市场有着很大的份额，外观包装有着很吸引人的视觉，在蓝莓味的攻克上还是比较成功。
+        </li>
+        <li>
+          <img src="./img/lx/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝星彩虹三双爆</h2>
+            <p>价格：310</p>
+            <p>
+              蓝星香烟-GALAXY 韩国出品
+此款香烟在大家印象中不太深刻，形容更似一匹黑马，以平价的优点在市场有着很大的份额，外观包装有着很吸引人的视觉，在蓝莓味的攻克上还是比较成功。
+        </li>
+        <li>
+          <img src="./img/lx/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝星冰激凌</h2>
+            <p>价格：285</p>
+            <p>
+              蓝星香烟-GALAXY 韩国出品
+此款香烟在大家印象中不太深刻，形容更似一匹黑马，以平价的优点在市场有着很大的份额，外观包装有着很吸引人的视觉，在蓝莓味的攻克上还是比较成功。
+        </li>
+        <li>
+          <img src="./img/lx/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝星香芋</h2>
+            <p>价格：285</p>
+            <p>
+              蓝星香烟-GALAXY 韩国出品
+此款香烟在大家印象中不太深刻，形容更似一匹黑马，以平价的优点在市场有着很大的份额，外观包装有着很吸引人的视觉，在蓝莓味的攻克上还是比较成功。
+        </li>
+        <li>
+          <img src="./img/lx/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>蓝星陈皮</h2>
+            <p>价格：250</p>
+            <p>
+              蓝星香烟-GALAXY 韩国出品
+此款香烟在大家印象中不太深刻，形容更似一匹黑马，以平价的优点在市场有着很大的份额，外观包装有着很吸引人的视觉，在蓝莓味的攻克上还是比较成功。
+        </li>
+        <li>
+          <img src="./img/520/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>520粗草莓</h2>
+            <p>价格：265</p>
+            <p>
+              520香烟-台湾香烟
+              粉红色的镂空爱心烟嘴加上烟盒520字样的logo加持，特别容易捕获女孩的芳心，在国内属于禁烟所以大家对这款香烟较为陌生。假设解禁 国内必当迎来一波时尚的浪潮。
+        </li>
+        <li>
+          <img src="./img/520/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>520粗哈密瓜</h2>
+            <p>价格：270</p>
+            <p>
+              520香烟-台湾香烟
+              粉红色的镂空爱心烟嘴加上烟盒520字样的logo加持，特别容易捕获女孩的芳心，在国内属于禁烟所以大家对这款香烟较为陌生。假设解禁 国内必当迎来一波时尚的浪潮。
+        </li>
+        <li>
+          <img src="./img/520/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>520粗蓝莓</h2>
+            <p>价格：285</p>
+            <p>
+              520香烟-台湾香烟
+              粉红色的镂空爱心烟嘴加上烟盒520字样的logo加持，特别容易捕获女孩的芳心，在国内属于禁烟所以大家对这款香烟较为陌生。假设解禁 国内必当迎来一波时尚的浪潮。
+        </li>
+        <li>
+          <img src="./img/520/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>520细草莓</h2>
+            <p>价格：255</p>
+            <p>
+              520香烟-台湾香烟
+              粉红色的镂空爱心烟嘴加上烟盒520字样的logo加持，特别容易捕获女孩的芳心，在国内属于禁烟所以大家对这款香烟较为陌生。假设解禁 国内必当迎来一波时尚的浪潮。
+        </li>
+        <li>
+          <img src="./img/520/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>520细哈密瓜</h2>
+            <p>价格：255</p>
+            <p>
+              520香烟-台湾香烟
+              粉红色的镂空爱心烟嘴加上烟盒520字样的logo加持，特别容易捕获女孩的芳心，在国内属于禁烟所以大家对这款香烟较为陌生。假设解禁 国内必当迎来一波时尚的浪潮。
+        </li>
+        <li>
+          <img src="./img/520/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>520细蓝莓</h2>
+            <p>价格：255</p>
+            <p>
+              520香烟-台湾香烟
+              粉红色的镂空爱心烟嘴加上烟盒520字样的logo加持，特别容易捕获女孩的芳心，在国内属于禁烟所以大家对这款香烟较为陌生。假设解禁 国内必当迎来一波时尚的浪潮。
+        </li>
+        <li>
+          <img src="./img/ml/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>米兰红酒双爆</h2>
+            <p>价格：270</p>
+            <p>
+              米兰爆珠-MILANO英国出品
+22年同事从英国带了两包米兰爆珠香烟我第一眼感觉对它一见如故，热门的水果爆珠味加上米兰香烟制作烟丝深厚的功底不得让我觉得似曾相识。不如所料口感以及味道和爱喜非常相似，而且水果浓香尽如人意。
+        </li>
+        <li>
+          <img src="./img/ml/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>米兰蓝莓双爆</h2>
+            <p>价格：270</p>
+            <p>
+              米兰爆珠-MILANO英国出品
+22年同事从英国带了两包米兰爆珠香烟我第一眼感觉对它一见如故，热门的水果爆珠味加上米兰香烟制作烟丝深厚的功底不得让我觉得似曾相识。不如所料口感以及味道和爱喜非常相似，而且水果浓香尽如人意。
+        </li>
+        <li>
+          <img src="./img/ml/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>米兰芒果双爆</h2>
+            <p>价格：270</p>
+            <p>
+              米兰爆珠-MILANO英国出品
+22年同事从英国带了两包米兰爆珠香烟我第一眼感觉对它一见如故，热门的水果爆珠味加上米兰香烟制作烟丝深厚的功底不得让我觉得似曾相识。不如所料口感以及味道和爱喜非常相似，而且水果浓香尽如人意。
+        </li>
+        <li>
+          <img src="./img/wj/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>维京红酒</h2>
+            <p>价格：260</p>
+            <p>
+              维京海盗-VIKING 北欧香烟维京人在雪茄行业已经有20多年的历史和大卫杜夫共同生产混合型爆珠香烟上有着异曲同工之妙，亦设计出精致而独特的马可铁金属雪茄标环象征著1,200年前维京人的海盗生涯以及他们征服自然与探索世界勇猛而无畏的精神。                
+        </li>
+        <li>
+          <img src="./img/wj/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>维京蓝莓</h2>
+            <p>价格：260</p>
+            <p>
+              维京海盗-VIKING 北欧香烟维京人在雪茄行业已经有20多年的历史和大卫杜夫共同生产混合型爆珠香烟上有着异曲同工之妙，亦设计出精致而独特的马可铁金属雪茄标环象征著1,200年前维京人的海盗生涯以及他们征服自然与探索世界勇猛而无畏的精神。               
+        </li>
+        <li>
+          <img src="./img/wj/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>维京巧克力</h2>
+            <p>价格：260</p>
+            <p>
+              维京海盗-VIKING 北欧香烟维京人在雪茄行业已经有20多年的历史和大卫杜夫共同生产混合型爆珠香烟上有着异曲同工之妙，亦设计出精致而独特的马可铁金属雪茄标环象征著1,200年前维京人的海盗生涯以及他们征服自然与探索世界勇猛而无畏的精神。
+        </li>
+        <li>
+          <img src="./img/xso/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>XSO苹果</h2>
+            <p>价格：230</p>
+            <p>
+              xso香烟-英国出品
+黑色的包装不得不让人联想到咖啡味混合型香烟，不出乎意料这款xso基础味为咖啡味，增添了水果味后让人回味无穷，更是采用雾化技术在没有爆珠的条件香气还是那么出类拔萃。
+        </li>
+        <li>
+          <img src="./img/xso/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>XSO草莓</h2>
+            <p>价格：230</p>
+            <p>
+              xso香烟-英国出品
+黑色的包装不得不让人联想到咖啡味混合型香烟，不出乎意料这款xso基础味为咖啡味，增添了水果味后让人回味无穷，更是采用雾化技术在没有爆珠的条件香气还是那么出类拔萃。
+        </li>
+        <li>
+          <img src="./img/xso/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>XSO普通</h2>
+            <p>价格：230</p>
+            <p>
+              xso香烟-英国出品
+黑色的包装不得不让人联想到咖啡味混合型香烟，不出乎意料这款xso基础味为咖啡味，增添了水果味后让人回味无穷，更是采用雾化技术在没有爆珠的条件香气还是那么出类拔萃。
+        </li>
+        <li>
+          <img src="./img/xso/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>XSO咖啡</h2>
+            <p>价格：230</p>
+            <p>
+              xso香烟-英国出品
+黑色的包装不得不让人联想到咖啡味混合型香烟，不出乎意料这款xso基础味为咖啡味，增添了水果味后让人回味无穷，更是采用雾化技术在没有爆珠的条件香气还是那么出类拔萃。
+        </li>
+        <li>
+          <img src="./img/xs/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>日本雪松止咳香烟</h2>
+            <p>价格：330</p>
+            <p>
+              雪松止咳香烟-日本出品
+唯一一款不含尼古丁 焦油的香烟，配料表中含有二类药主治缓解咽炎。温馨提示：吸烟有害健康，即使是止咳烟并非抽了就能治疗咽炎。
+        </li>
+        <li>
+          <img src="./img/kbl/1.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁抹茶绿</h2>
+            <p>价格：1200</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/2.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁黑</h2>
+            <p>价格：1160</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/3.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁金</h2>
+            <p>价格：1160</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/4.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁白</h2>
+            <p>价格：1110</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/5.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁蓝</h2>
+            <p>价格：950</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/6.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁灰</h2>
+            <p>价格：1100</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙简装黑</h2>
+            <p>价格：860</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/7.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙简装白</h2>
+            <p>价格：860</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+        <li>
+          <img src="./img/kbl/8.jpg" alt="#" />
+          <div class="wenzi">
+            <h2>欧盟卡比龙总裁(日税版)</h2>
+            <p>价格：1400</p>
+            <p>
+              卡比龙总裁-俄罗斯出品
+欧盟卡比龙总裁香烟超长的中支香烟，烟支雕刻的LOGO点燃后散发艳丽的烟雾，过滤嘴采用3层纤维使得口感贴合既温顺。 这款香烟公认的颜值No.1，也是尊贵奢华的代表。
+        </li>
+      </ul>
+    </div>
+    <script>
+      const box = document.querySelector(".box");
+const Search = document.querySelector(".Search");
+const icon = document.querySelector(".sousuo");
+const time = document.querySelector(".time");
+const rq = document.querySelector(".rq");
+const home = document.querySelector(".home");
+const button = document.querySelector(".button");
+const promptBox = document.querySelector(".promptBox");
+const modalCover = document.querySelector(".modalCover");
+const qkl = document.querySelector(".qkl");
+const qx = document.querySelector(".qx");
+const li = document.querySelectorAll("li");
+const ul = document.querySelector("ul");
+const textTs = document.querySelector(".textTs");
+const kuc = document.querySelector(".kucun");
+const kucGb = document.querySelector(".kucGb");
+const tus = document.querySelector("#tus");
+
+// 鼠标移动
+const saStart = () => {
+  Search.style.width = "250px";
+  Search.style.height = "40px";
+  Search.style.color = "rgb(255, 255, 255)";
+  // icon.style.display = "none";
+  // icon.style.cursor = "pointer";
+  icon.style.height = "30px";
+  icon.style.width = "30px";
+  icon.style.top = "-10px";
+  icon.style.marginLeft = "200px";
+};
+// 鼠标离开
+const saEnd = () => {
+  Search.style.width = "70px";
+  Search.style.height = "70px";
+  Search.style.color = "rgb(255, 255, 255,0)";
+  // icon.style.display = "block";
+  icon.style.height = "40px";
+  icon.style.width = "40px";
+  icon.style.top = "0px";
+  icon.style.marginLeft = "0px";
+};
+
+// 返回主页面 清除盒子
+const s = home.addEventListener("click", () => {
+  Search.value = "";
+  rq.style.display = "none";
+});
+
+// 定义搜索框和图标的时间
+box.addEventListener("mouseover", saStart);
+box.addEventListener("mouseout", saEnd);
+icon.addEventListener("mouseover", saStart);
+icon.addEventListener("mouseout", saEnd);
+// 焦点事件
+Search.addEventListener("focus", () => {
+  box.removeEventListener("mouseout", saEnd);
+  // console.log("获取到焦点");
+});
+// 失去焦点事件
+Search.addEventListener("blur", () => {
+  saEnd();
+  // console.log("失去到焦点");
+  box.addEventListener("mouseout", saEnd);
+});
+
+// 判断输入框内容
+Search.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    if (
+      Search.value != "七星" ||
+      Search.value != "巧克力" ||
+      Search.value != "阿凡达" ||
+      Search.value != "爱喜" ||
+      Search.value != "铁塔猫" ||
+      Search.value != "铁塔猫" ||
+      Search.value != "万宝路" ||
+      Search.value != "星空" ||
+      Search.value != "蓝星" ||
+      Search.value != "520" ||
+      Search.value != "米兰" ||
+      Search.value != "维京" ||
+      Search.value != "xso" ||
+      Search.value != "雪松" ||
+      Search.value != "卡比龙"
+    ) {
+      rq.style.display = "none";
+      promptBox.style.opacity = "1";
+      promptBox.style.display = "block";
+      modalCover.style.display = "block";
+      textTs.innerHTML = "暂时没有此烟";
+    }
+    if (Search.value === "") {
+      rq.style.display = "none";
+      promptBox.style.opacity = "1";
+      promptBox.style.display = "block";
+      modalCover.style.display = "block";
+      textTs.innerHTML = "不能为空，请输入香烟名字进行搜索";
+    }
+    // 关闭提示框
+    button.addEventListener("click", () => {
+      modalCover.style.display = "none";
+      // 透明度设为0不可见
+      promptBox.style.opacity = "0";
+      Search.value = "";
+      // 0.1秒之后隐藏这个类
+      setTimeout(() => {
+        promptBox.style.display = "none";
+      }, 100);
+    });
+  }
+});
+
+function qxsoa() {
+  li[0].style.display = "block";
+  li[1].style.display = "block";
+  li[2].style.display = "block";
+  li[3].style.display = "block";
+  li[4].style.display = "block";
+  li[4].style.display = "block";
+  li[32].style.display = "block";
+  li[33].style.display = "block";
+  li[34].style.display = "block";
+  li[35].style.display = "block";
+}
+function qxsob() {
+  li[0].style.display = "none";
+  li[1].style.display = "none";
+  li[2].style.display = "none";
+  li[3].style.display = "none";
+  li[4].style.display = "none";
+  li[32].style.display = "none";
+  li[33].style.display = "none";
+  li[34].style.display = "none";
+  li[35].style.display = "none";
+}
+function qklsoa() {
+  li[5].style.display = "block";
+  li[6].style.display = "block";
+  li[7].style.display = "block";
+}
+function qklsob() {
+  li[5].style.display = "none";
+  li[6].style.display = "none";
+  li[7].style.display = "none";
+}
+function afdsoa() {
+  li[8].style.display = "block";
+  li[9].style.display = "block";
+  li[10].style.display = "block";
+}
+function afdsob() {
+  li[8].style.display = "none";
+  li[9].style.display = "none";
+  li[10].style.display = "none";
+}
+function axsoa() {
+  li[11].style.display = "block";
+  li[12].style.display = "block";
+  li[13].style.display = "block";
+  li[14].style.display = "block";
+  li[15].style.display = "block";
+  li[16].style.display = "block";
+  li[17].style.display = "block";
+  li[18].style.display = "block";
+  li[19].style.display = "block";
+  li[20].style.display = "block";
+  li[21].style.display = "block";
+  li[22].style.display = "block";
+  li[23].style.display = "block";
+  li[24].style.display = "block";
+  li[25].style.display = "block";
+  li[26].style.display = "block";
+  li[27].style.display = "block";
+  li[28].style.display = "block";
+  li[29].style.display = "block";
+  li[30].style.display = "block";
+  li[31].style.display = "block";
+}
+function axsob() {
+  li[11].style.display = "none";
+  li[12].style.display = "none";
+  li[13].style.display = "none";
+  li[14].style.display = "none";
+  li[15].style.display = "none";
+  li[16].style.display = "none";
+  li[17].style.display = "none";
+  li[18].style.display = "none";
+  li[19].style.display = "none";
+  li[20].style.display = "none";
+  li[21].style.display = "none";
+  li[22].style.display = "none";
+  li[23].style.display = "none";
+  li[24].style.display = "none";
+  li[25].style.display = "none";
+  li[26].style.display = "none";
+  li[27].style.display = "none";
+  li[28].style.display = "none";
+  li[29].style.display = "none";
+  li[30].style.display = "none";
+  li[31].style.display = "none";
+}
+function ttmsoa() {
+  li[36].style.display = "block";
+  li[37].style.display = "block";
+  li[38].style.display = "block";
+  li[39].style.display = "block";
+  li[40].style.display = "block";
+  li[41].style.display = "block";
+  li[42].style.display = "block";
+  li[43].style.display = "block";
+  li[44].style.display = "block";
+  li[45].style.display = "block";
+  li[46].style.display = "block";
+  li[47].style.display = "block";
+  li[48].style.display = "block";
+  li[49].style.display = "block";
+  li[50].style.display = "block";
+  li[51].style.display = "block";
+  li[52].style.display = "block";
+}
+function ttmsob() {
+  li[36].style.display = "none";
+  li[37].style.display = "none";
+  li[38].style.display = "none";
+  li[39].style.display = "none";
+  li[40].style.display = "none";
+  li[41].style.display = "none";
+  li[42].style.display = "none";
+  li[43].style.display = "none";
+  li[44].style.display = "none";
+  li[45].style.display = "none";
+  li[46].style.display = "none";
+  li[47].style.display = "none";
+  li[48].style.display = "none";
+  li[49].style.display = "none";
+  li[50].style.display = "none";
+  li[51].style.display = "none";
+  li[52].style.display = "none";
+}
+function blsoa() {
+  li[53].style.display = "block";
+  li[54].style.display = "block";
+  li[55].style.display = "block";
+  li[56].style.display = "block";
+  li[57].style.display = "block";
+  li[58].style.display = "block";
+  li[59].style.display = "block";
+  li[60].style.display = "block";
+  li[61].style.display = "block";
+  li[62].style.display = "block";
+  li[63].style.display = "block";
+  li[64].style.display = "block";
+  li[65].style.display = "block";
+  li[66].style.display = "block";
+}
+function blsob() {
+  li[53].style.display = "none";
+  li[54].style.display = "none";
+  li[55].style.display = "none";
+  li[56].style.display = "none";
+  li[57].style.display = "none";
+  li[58].style.display = "none";
+  li[59].style.display = "none";
+  li[60].style.display = "none";
+  li[61].style.display = "none";
+  li[62].style.display = "none";
+  li[63].style.display = "none";
+  li[64].style.display = "none";
+  li[65].style.display = "none";
+  li[66].style.display = "none";
+}
+function wblsoa() {
+  li[67].style.display = "block";
+  li[68].style.display = "block";
+  li[69].style.display = "block";
+  li[70].style.display = "block";
+  li[71].style.display = "block";
+  li[72].style.display = "block";
+  li[73].style.display = "block";
+  li[74].style.display = "block";
+}
+function wblsob() {
+  li[67].style.display = "none";
+  li[68].style.display = "none";
+  li[69].style.display = "none";
+  li[70].style.display = "none";
+  li[71].style.display = "none";
+  li[72].style.display = "none";
+  li[73].style.display = "none";
+  li[74].style.display = "none";
+}
+function xksoa() {
+  li[75].style.display = "block";
+  li[76].style.display = "block";
+  li[77].style.display = "block";
+  li[78].style.display = "block";
+}
+function xksob() {
+  li[75].style.display = "none";
+  li[76].style.display = "none";
+  li[77].style.display = "none";
+  li[78].style.display = "none";
+}
+function lxsoa() {
+  li[79].style.display = "block";
+  li[80].style.display = "block";
+  li[81].style.display = "block";
+  li[82].style.display = "block";
+  li[83].style.display = "block";
+  li[84].style.display = "block";
+}
+function lxsob() {
+  li[79].style.display = "none";
+  li[80].style.display = "none";
+  li[81].style.display = "none";
+  li[82].style.display = "none";
+  li[83].style.display = "none";
+  li[84].style.display = "none";
+}
+function wrsoa() {
+  li[85].style.display = "block";
+  li[86].style.display = "block";
+  li[87].style.display = "block";
+  li[88].style.display = "block";
+  li[89].style.display = "block";
+  li[90].style.display = "block";
+}
+function wrsob() {
+  li[85].style.display = "none";
+  li[86].style.display = "none";
+  li[87].style.display = "none";
+  li[88].style.display = "none";
+  li[89].style.display = "none";
+  li[90].style.display = "none";
+}
+function mlsoa() {
+  li[91].style.display = "block";
+  li[92].style.display = "block";
+  li[93].style.display = "block";
+}
+function mlsob() {
+  li[91].style.display = "none";
+  li[92].style.display = "none";
+  li[93].style.display = "none";
+}
+function wjsoa() {
+  li[94].style.display = "block";
+  li[95].style.display = "block";
+  li[96].style.display = "block";
+}
+function wjsob() {
+  li[94].style.display = "none";
+  li[95].style.display = "none";
+  li[96].style.display = "none";
+}
+function xsosoa() {
+  li[97].style.display = "block";
+  li[98].style.display = "block";
+  li[99].style.display = "block";
+  li[100].style.display = "block";
+}
+function xsosob() {
+  li[97].style.display = "none";
+  li[98].style.display = "none";
+  li[99].style.display = "none";
+  li[100].style.display = "none";
+}
+function xssoa() {
+  li[101].style.display = "block";
+}
+function xssob() {
+  li[101].style.display = "none";
+}
+function kblsoa() {
+  li[102].style.display = "block";
+  li[103].style.display = "block";
+  li[104].style.display = "block";
+  li[105].style.display = "block";
+  li[106].style.display = "block";
+  li[107].style.display = "block";
+  li[108].style.display = "block";
+  li[109].style.display = "block";
+  li[110].style.display = "block";
+}
+function kblsob() {
+  li[102].style.display = "none";
+  li[103].style.display = "none";
+  li[104].style.display = "none";
+  li[105].style.display = "none";
+  li[106].style.display = "none";
+  li[107].style.display = "none";
+  li[108].style.display = "none";
+  li[109].style.display = "none";
+  li[110].style.display = "none";
+}
+// 弹出提示框
+Search.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    if (Search.value === "七星") {
+      rq.style.display = "block";
+      qxsoa();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "巧克力") {
+      rq.style.display = "block";
+      qxsob();
+      qklsoa();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "阿凡达") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsoa();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "爱喜") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsoa();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "铁塔猫") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsoa();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "百乐") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsoa();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "万宝路") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsoa();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "星空") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksoa();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "蓝星") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsoa();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "520") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsoa();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "米兰") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsoa();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "维京") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsoa();
+      xsosob();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "xso") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosoa();
+      xssob();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "雪松") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssoa();
+      kblsob();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+    if (Search.value === "卡比龙") {
+      rq.style.display = "block";
+      qxsob();
+      qklsob();
+      afdsob();
+      axsob();
+      ttmsob();
+      blsob();
+      wblsob();
+      xksob();
+      lxsob();
+      wrsob();
+      mlsob();
+      wjsob();
+      xsosob();
+      xssob();
+      kblsoa();
+      Search.value = "";
+      modalCover.style.display = "none";
+      promptBox.style.opacity = "0";
+      promptBox.style.display = "none";
+    }
+  }
+});
+
+// 点击盒子展开库存盒子
+kuc.addEventListener("click", () => {
+  kuc.style.width = "300px";
+  kuc.style.height = "300px";
+  kuc.style.marginLeft = "0px";
+  kuc.style.marginTop = "250px";
+  kuc.innerHTML =
+    "七星系列：<span>充足<br>巧克力系列：充足<br>阿凡达系列：充足<br>爱喜系列：充足<br>铁塔猫系列：充足<br>百乐系列：充足<br>万宝路系列：充足<br>星空系列：充足<br>蓝星系列：充足<br>520系列：充足<br>米兰系列：充足<br>维京系列：充足<br>XSO系列：充足<br>日本雪松系列：充足<br>卡比龙系列：46<br>";
+  kuc.style.transform = "none";
+  kuc.style.textSlign = "none";
+  kuc.style.lineHeight = "50px";
+  kuc.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  tus.style.marginTop = "255px";
+  tus.style.marginLeft = "-250px";
+  rq.style.display = "none";
+  kucGb.style.display = "block";
+  setTimeout(() => {
+    kucGb.style.opacity = "1";
+  }, 200);
+});
+
+tus.addEventListener("click", () => {
+  kuc.style.width = "300px";
+  kuc.style.height = "300px";
+  kuc.style.marginLeft = "0px";
+  kuc.style.marginTop = "250px";
+  kuc.innerHTML =
+    "七星系列：<span>充足<br>巧克力系列：充足<br>阿凡达系列：充足<br>爱喜系列：充足<br>铁塔猫系列：充足<br>百乐系列：充足<br>万宝路系列：充足<br>星空系列：充足<br>蓝星系列：充足<br>520系列：充足<br>米兰系列：充足<br>维京系列：充足<br>XSO系列：充足<br>日本雪松系列：充足<br>卡比龙系列：46<br>";
+  kuc.style.transform = "none";
+  kuc.style.textSlign = "none";
+  kuc.style.lineHeight = "50px";
+  kuc.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  tus.style.marginTop = "255px";
+  tus.style.marginLeft = "-250px";
+  rq.style.display = "none";
+  kucGb.style.display = "block";
+  setTimeout(() => {
+    kucGb.style.opacity = "1";
+  }, 200);
+});
+
+// 点击图标缩小盒子大小
+kucGb.addEventListener("click", () => {
+  kuc.style.width = "50px";
+  kuc.style.height = "50px";
+  kuc.style.marginLeft = "320px";
+  kuc.style.marginTop = "10px";
+  kuc.innerHTML = "";
+  kuc.style.backgroundColor = "rgb(43, 43, 43, 0.5)";
+  tus.style.marginTop = "18px";
+  tus.style.marginLeft = "316px";
+  kucGb.style.opacity = "0";
+  setTimeout(() => {
+    kucGb.style.display = "none";
+  }, 10);
+});
+
+    </script>
+  </body>
+</html>
